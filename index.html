@@ -107,9 +107,14 @@ body.unlocked {
   z-index:2;
 }
 
-.section.show {
-  opacity:1;
-  transform:translateY(0);
+.section.show /* LETTER - NO TRANSITION DELAY */
+#letter {
+  transition: none;
+}
+
+#letter.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* IMAGE */
@@ -419,9 +424,9 @@ function typeLetter(){
 
 function startLetter(){
   document.getElementById("letter").classList.add("show");
+  document.getElementById("letter").scrollIntoView({behavior:"smooth"});
   typeLetter();
 }
-
 </script>
 
 </body>
